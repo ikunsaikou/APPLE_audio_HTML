@@ -1,0 +1,164 @@
+<html>
+<head>
+    <title>APPLE</title>
+    <meta charset='utf-8'>
+</head>
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    a{
+        text-decoration:none;
+    }
+    html {
+        overflow: hidden;
+    }
+    body,canvas{
+        transition:background 5s, opacity 3s;
+    }
+    replay{
+        width:300px;
+        margin:auto;
+        position:absolute;
+        top:0;left:0;bottom:0;right:0;
+    }
+    APPLEPNG {
+        position: absolute;
+        top: 270px;
+        transition: opacity .25s;
+    }
+    .text-gradient {
+        font-size: 9em;
+        font-family: 'Josefin Sans', sans-serif;
+        background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#f50c08), to(#cc7772));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .textBounce {
+        animation: textBounce .3s ease-in-out forwards;  //淡入淡出动画效果
+    }
+
+
+    .png{
+        position: absolute;
+        left: calc(1150px /2);
+        top: calc(500px/2);
+        width: 200px;
+        height: 200px;
+        transform: rotate(0deg);
+        animation: rot 8s linear infinite;
+    }
+    @keyframes rot{
+        form{transform: rotate(0deg)}
+        to{transform: rotate(360deg)}
+    }
+
+    #oval {
+        position: absolute;
+        width: 100px;
+        height: 10px;
+        left: 640px;
+        top: 390px;
+        background: radial-gradient(ellipse at center, #21dd13 0%, #ffffff 76%, #ffffff 84%);
+        border-radius: 100px / 5px;
+        box-shadow: 0px 0px 50px #a3eabe;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    #replay{
+        height:300px;
+    }
+
+    #replay{
+        display:none;
+        font-size:5em;
+        transition:opacity 3s,transform 1s;
+    }
+    #replay:hover{
+        transform:scale(1.5)
+    }
+
+    .A {
+        position: absolute;
+        left: calc(1000px /2);
+        top: calc(500px/2);
+        font-size: 80px;
+        color: rgb(255, 35, 0);
+        text-shadow: 5px 5px 0 rgba(180,255,0,0.5);
+        float:left;
+        transform:rotate(-60deg);
+        -webkit-transform:rotate(-60deg);
+    }
+
+    .P{
+        position: absolute;
+        left: calc(1120px /2);
+        top: calc(380px/2);
+        font-size: 80px;
+        color: rgb(255, 23, 6);
+        text-shadow: 5px 5px 0 rgba(180,255,0,0.5);
+        float:left;
+        transform:rotate(-30deg);
+        -webkit-transform:rotate(-30deg);
+    }
+    .P2{
+        position: absolute;
+        left: calc(1280px /2);
+        top: calc(320px/2);
+        font-size: 80px;
+        color: rgb(255, 23, 6);
+        text-shadow: 5px 5px 0 rgba(180,255,0,0.5);
+        float:left;
+        transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+    }
+    .L{
+        position: absolute;
+        left: calc(1480px /2);
+        top: calc(360px/2);
+        font-size: 80px;
+        color: rgb(255, 35, 15);
+        text-shadow: 5px 5px 0 rgba(180,255,0,0.5);
+        transform:rotate(30deg);
+        -webkit-transform:rotate(30deg);
+    }
+    .E{
+        position: absolute;
+        left: calc(1580px /2);
+        top: calc(490px/2);
+        font-size: 80px;
+        color: rgb(255, 39, 20);
+        text-shadow: 5px 5px 0 rgba(180,255,0,0.5);
+        transform:rotate(60deg);
+        -webkit-transform:rotate(60deg);
+    }
+
+</style>
+<body>
+<canvas id="canvas" width="1366" height="680" style="position:absolute;z-index:-1"></canvas>
+<canvas id="bg" width="1366" height="680" style="position:absolute;z-index:-1"></canvas>
+<sectioin id='APPLEPNG'>
+    <image class = "png" src = "apple2.png"></image>
+    <oval id='oval'></oval>
+    <APPLE CLASS = "APPLE">
+    <A CLASS="A">A</A>
+    <P class = "P">P</P>
+    <P2 CLASS = "P2">P</P2>
+    <L CLASS = "L">L</L>
+    <E CLASS = "E">E</E>
+    </APPLE>
+</sectioin>
+<sectioin id='group'>
+</sectioin>
+
+
+<replay id='replay' class='hidden text-gradient'><a href='javascript:location.reload()'>replay</a></replay>
+
+
+<script type="text/javascript" src="audioMessager.js"></script>
+</body>
+</html>
